@@ -35,4 +35,16 @@ int main(void)
 			}
 			d++;
 			position_u++;
-			u = posi
+			u = position_u;
+		}
+		position_u = position_uu;
+		position_u++;
+		position_uu++;
+		u = position_u;
+		position_d++;
+		d = position_d;
+		c++;
+	}
+	putchar('\n');
+	return (0);
+}
