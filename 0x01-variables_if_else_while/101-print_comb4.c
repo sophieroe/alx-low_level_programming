@@ -36,4 +36,3 @@ int main(void)
 			d++;
 			position_u++;
 			u = posi
-
