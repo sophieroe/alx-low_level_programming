@@ -1,20 +1,19 @@
 #include "main.h"
 
 /**
-* main - Print "_putchar"
-*
-* Return: Always 0 
-*/
+ * print_alphabet -  prints the alphabet, in lowercase, followed by a new line
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and error is set appropriately.
+ */
 
-int main(void)
+void print_alphabet(void)
 {
-	int i = 0;
-	char p[] = "_putchar\n";
+	int i;
 
-	while (p[i])
+	for (i = 97; i < 123; i++)
 		{
-		_putchar(p[i]);
-		i++;
+		_putchar(i);
 		}
-	return (0);
+		_putchar('\n');
 }
