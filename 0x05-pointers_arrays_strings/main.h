@@ -16,6 +16,7 @@ char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
 void _puts(char *str);
 void _puts(char *str);
+int add(int, int);
 
 
  #endif
