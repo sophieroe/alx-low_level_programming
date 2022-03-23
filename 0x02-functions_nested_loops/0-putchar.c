@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
-* main - Print the word "_putchar"
+* main - Entry point
 *
 * Return: Always 0 (Success)
 */
 
 int main(void)
 {
+	char chaine[] = "_putchar\n";
 	int i = 0;
-	char p[] = "_putchar\n";
 
-	while (p[i])
-		{
-		_putchar(p[i]);
+	while (chaine[i])
+	{
+		_putchar(chaine[i]);
 		i++;
-		}
+	}
 	return (0);
 }
