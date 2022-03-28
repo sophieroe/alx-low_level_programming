@@ -1,18 +1,9 @@
-#include "main.h"
-#include <stdio.h>
-
-/**
- * main - check the code 
- *
- * Return: Always 0.
- */
-int main(void)
+char *_memset(char *s, char b, unsigned int n)
 {
-    int n;
+	unsigned int i = 0;
 
-    n = 402;
-    printf("n=%d\n", n);
-    reset_to_98(&n);
-    printf("n=%d\n", n);
-    return (0);
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
 }
+ 
