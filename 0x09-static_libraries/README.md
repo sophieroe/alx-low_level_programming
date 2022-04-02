@@ -1,1 +1,2 @@
-thisis a new file on static libraries
+#!/bin/bash
+new file
