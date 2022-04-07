@@ -1,70 +1,47 @@
-#include<stdlib.h>
 #include "main.h"
 
 /**
-* ft_strlen - a function
-* @str: the chaine
-*
-* Return: 1 or 0
-*/
-
-int ft_strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-
-/**
- * string_nconcat - a function ...
- * @s1: the chaine
- * @s2: the chaine
- * @n: the number
- *
- * Return: 1 or 0
+ * string_nconcat - concatenates two strings
+ * @s1: destination string
+ * @s2: source string
+ * @n: number of bytes from s2 to be copied
+ * Return: concatenated string
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int arret, i = 0, j = 0;
-	unsigned int taille1, taille2;
-	char *str;
+	unsigned int i, j, size, len1, len2;
+	char *ptr;
 
-	taille2 = ft_strlen(s2);
-	taille1 = ft_strlen(s1);
-
-	str  = malloc(sizeof(char) * (taille1 + taille2 + 1));
-
-	if (str == NULL)
-		return (NULL);
-
-	while (s1[i] != '\0')
-	{
-		str[j] = s1[i];
-		i++;
-		j++;
-	}
-
+	if (s1 == NULL)
+		s1 = "";
 	if (s2 == NULL)
-	{
-		return (s1);
-	}
+		s2 = "";
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	if (n > len2)
+		n = len2;
+	size = len1 + n;
+	ptr = malloc(sizeof(char) * size + 1);
+	if (!ptr)
+		return (NULL);
+	for (i = 0; i < len1; i++)
+		ptr[i] = s1[i];
+	for (j = 0; j < n; j++, i++)
+		ptr[i] = s2[j];
+	ptr[i] = 0;
+	return (ptr);
+}
 
-	i = 0;
+/**
+ * _strlen - returns the length of a string
+ * @s: string s
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	char *p = s;
 
-	if (taille2 >= n)
-		arret =  n;
-	else
-		arret = taille2;
-	while (i <= arret)
-	{
-		str[j] =  s2[i];
-		i++;
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
+	while (*s)
+		s++;
+	return (s - p);
 }
