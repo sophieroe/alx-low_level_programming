@@ -1,13 +1,16 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * get_endianness - checks if a machine is little or big endian
- * Return: 0 for big, 1 for little
+ * get_endianness - retunrs the endian of the processor
+ *
+ * Return: 1 for little and 0 for big
  */
-int get_endianness(void)
-{
-    unsigned int i = 1;
-    char *c = (char *)&i;
 
-    return (*c);
+int get_endianness(void)
+
+{
+	unsigned int i;
+
+return ((int) (((char *)&i)[0]));
 }
