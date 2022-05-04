@@ -1,31 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
-  * read_textfile - ...
-  * @filename: The source file
-  * @letters: Number of letters to reads and prints
-  *
-  * Return: ...
-  */
-ssize_t read_textfile(const char *filename, size_t letters)
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
 {
-	int fd, readed;
-	char *buff = malloc(sizeof(char *) * letters);
+    ssize_t n;
 
-	if (!buff)
-		return (0);
-
-	if (!filename)
-		return (0);
-
-	fd = open(filename, O_RDONLY, 0600);
-	if (fd == -1)
-		return (0);
-
-	readed = read(fd, buff, letters);
-	write(STDOUT_FILENO, buff, readed);
-
-	free(buff);
-	close(fd);
-	return (readed);
+    if (ac != 2)
+    {
+        dprintf(2, "Usage: %s filename\n", av[0]);
+        exit(1);
+    }
+    n = read_textfile(av[1], 114);
+    printf("\n(printed chars: %li)\n", n);
+    n = read_textfile(av[1], 1024);
+    printf("\n(printed chars: %li)\n", n);
+    return (0);
 }
